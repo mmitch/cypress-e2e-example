@@ -1,14 +1,18 @@
 {
     "scripts": {
         "pretest": "npm run delete:reports",
-        "test": "cypress run --browser firefox --headless",
-	"posttest": "npm run combine:reports",
+        "test": "cypress run --browser firefox --headless || true",
+        "posttest": "npm run combine:xml:reports && npm run combine:json:reports && npm run generate:html:report",
         "delete:reports": "rm cypress/results/* || true",
-	"combine:reports": "jrm cypress/results/combined-report.xml \"cypress/results/results-*.xml\""
+        "combine:xml:reports": "jrm cypress/results/combined-report.xml \"cypress/results/results-*.xml\"",
+        "combine:json:reports": "mochawesome-merge \"cypress/results/mochawesome-*.json\" > cypress/results/combined-mochawesome.json",
+	"generate:html:report": "marge cypress/results/combined-mochawesome.json"
     },
     "devDependencies": {
         "cypress-multi-reporters": "^1.6.1",
         "junit-report-merger": "^4.0.0",
-        "mocha-junit-reporter": "^2.0.2"
+        "mocha-junit-reporter": "^2.0.2",
+        "mochawesome": "^7.1.3",
+        "mochawesome-merge": "^4.2.1"
     }
 }
