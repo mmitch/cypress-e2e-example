@@ -8,6 +8,7 @@
         "combine:xml:reports": "jrm cypress/reports/combined-report.xml \"cypress/results/results-*.xml\""
     },
     "devDependencies": {
+        "cypress": "^10.7.0",
         "cypress-mochawesome-reporter": "^3.2.2",
         "cypress-multi-reporters": "^1.6.1",
         "junit-report-merger": "^4.0.0",
