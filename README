@@ -1,0 +1,7 @@
+Minimal test project to run the Cypress test framework on CLI under Linux.
+https://www.cypress.io/
+
+Caveat: still needs Xvfb installed, even when running --headless.
+Setting `ELECTRON_RUN_AS_NODE=1` should fix this, but then Electron
+would need to be installed, although we don't use it.
+

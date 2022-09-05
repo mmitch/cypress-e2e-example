@@ -1,0 +1,10 @@
+# test results
+cypress/screenshots/
+cypress/videos/
+
+# backup files
+*~
+
+# Emacs temporary files
+.#*
+*#
