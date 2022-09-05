@@ -1,5 +1,14 @@
 {
     "scripts": {
-	"test": "cypress run --browser firefox --headless"
+        "pretest": "npm run delete:reports",
+        "test": "cypress run --browser firefox --headless",
+	"posttest": "npm run combine:reports",
+        "delete:reports": "rm cypress/results/* || true",
+	"combine:reports": "jrm cypress/results/combined-report.xml \"cypress/results/results-*.xml\""
+    },
+    "devDependencies": {
+        "cypress-multi-reporters": "^1.6.1",
+        "junit-report-merger": "^4.0.0",
+        "mocha-junit-reporter": "^2.0.2"
     }
 }
