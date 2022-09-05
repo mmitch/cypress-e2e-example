@@ -1,8 +1,4 @@
-describe('first spec', () => {
-    
-    it('should pass', () => {
-	expect(true).to.equal(true)
-    })
+describe('second spec', () => {
     
     it('should visit absolute path', () => {
 	cy.visit('https://www.cgarbs.de/')
