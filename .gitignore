@@ -2,7 +2,7 @@
 cypress/screenshots/
 cypress/videos/
 cypress/results/
-mochawesome-report/
+cypress/reports/
 
 # node
 node_modules/

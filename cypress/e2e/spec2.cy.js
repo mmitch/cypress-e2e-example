@@ -8,7 +8,7 @@ describe('second spec', () => {
     it('should visit relative path', () => {
 	// see e2e.baseUrl in cypress.config.js
 	cy.visit('/')
-	cy.get('h1').should('have.text', 'Master Mitch - Startseite')
+	cy.get('h1').should('have.text', 'Master Mitch - Startseite FAIL')
     })
 
     it('should link to blog', () => {
